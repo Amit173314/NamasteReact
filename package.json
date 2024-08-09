@@ -1,0 +1,25 @@
+{
+  "name": "namastereactdev",
+  "version": "1.0.0",
+  "description": "This is react app created by Amit Chauhan",
+  
+  "scripts": {
+    "start":"parcel Index.html",
+    "build":"parcel build Index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/amit-chauhan29/NamasteReact.git)"
+  },
+  "author": "Amit Chauhan",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
