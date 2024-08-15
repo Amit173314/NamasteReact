@@ -7,6 +7,18 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import Error from "./components/Error";  
 import RestaurantMenu from "./components/RestaurantMenu";
+import React, { lazy, Suspense } from "react";
+
+//import Grocery from "./components/Grocery";
+
+// Chunking
+// Code Splitting
+// Dynamic Bundling
+// lazy Loading
+// on demand loading
+// dynamix imoprt
+
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
     return (
@@ -33,6 +45,14 @@ children: [
   {
     path: "/about",
   element: <About />
+  },
+  {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Grocery />
+          </Suspense>
+        )
   },
   {
     path: "/restaurants/:resId",
