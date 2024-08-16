@@ -6,7 +6,7 @@ import { MENU_URL } from "./constants";
 
     useEffect(() => {
         fetchMenuData();
-    })
+    },[])
 
     const fetchMenuData = async () => {
         const data = await fetch(MENU_URL + resId);

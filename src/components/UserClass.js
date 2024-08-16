@@ -24,7 +24,6 @@ class Userclass extends React.Component {
         const {count, count2} = this.state;
         return (
             <div>
-                <h1>Amit Chauhan</h1>
                 <h1>{this.state.userInfo.name}</h1>
                 <h1>{this.state.userInfo.login}</h1>
                 <img src={this.state.userInfo.avatar_url}></img>
