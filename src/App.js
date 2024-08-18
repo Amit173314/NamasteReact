@@ -9,6 +9,9 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import React, { lazy, Suspense } from "react";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import ShoppingCart from "./components/ShoppingCart";
 
 //import Grocery from "./components/Grocery";
 
@@ -25,11 +28,14 @@ const AppLayout = () => {
   const [userName, setUserName] = useState("Amit");
     return (
         <div id="app">
+          <Provider store = {appStore}>
           <UserContext.Provider value = {{loggedInUser: userName, setUserName}}>
           <Header />
           <Outlet />
           </UserContext.Provider>
+          </Provider>
         </div>
+       
     );
 }
 
@@ -61,6 +67,10 @@ children: [
   {
     path: "/restaurants/:resId",
     element: <RestaurantMenu />
+  },
+  {
+    path: "/cart",
+    element: <ShoppingCart />
   }
 ],
 errorElement: <Error />
